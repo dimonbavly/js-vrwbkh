@@ -1,22 +1,17 @@
 //Learn JS
-// Import stylesheets dd
+// Import stylesheets
 import './style.css';
 
-// Write Javascript code!
-const appDiv = document.getElementById('app');
-appDiv.innerHTML = `<h1>JS Starter</h1>`;
+function Accumulator(startingValue) {
+  this.value = startingValue;
 
-let user = {
-  name: 'John',
-
-  sayHi: () => {
-    alert(this.name);
-  },
-};
-
-function sayHi() {
-  console.log(this.name);
+  this.read = function() {
+    this.value += +prompt("increment?", 0);
+  }
 }
 
-user.sayHi = sayHi;
-user.sayHi();
+let accumulator = new Accumulator(1);
+
+accumulator.read();
+accumulator.read();
+console.log(accumulator.value);
